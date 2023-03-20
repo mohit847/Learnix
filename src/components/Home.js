@@ -2,12 +2,14 @@ import React from "react";
 import girl from "../assets/girl.png";
 import CourseCards from "./CourseCards";
 import Reasons from "./Rreasons";
+import ExploreTeachers from "./ExploreTeachers";
+import CourseCategory from "./CourseCategory";
 
 function HomePage() {
   return (
     <>
-      <div className="bg-teal-800 flex justify-between items-center h-[680px] -mt-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row md:flex-row md:justify-between justify-between items-center h-full">
+      <div className="bg-teal-800 flex items-center h-[680px] -mt-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row md:flex-row md:justify-between gap-40 items-center h-full">
           <div className="text-white text-center md:text-left">
             <h1 className="text-4xl font-bold mb-4">
               Start learning <br />
@@ -33,6 +35,13 @@ function HomePage() {
 
       {/* why E-learing works */}
       <Reasons />
+
+      {/* Explore Teachers */}
+      <ExploreTeachers />
+
+      {/* Course catergory */}
+      <CourseCategory/>
+
     </>
   );
 }
