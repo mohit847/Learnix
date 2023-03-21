@@ -4,6 +4,8 @@ import CourseCards from "./CourseCards";
 import Reasons from "./Rreasons";
 import ExploreTeachers from "./ExploreTeachers";
 import CourseCategory from "./CourseCategory";
+import ClientTestimonial from "./ClientTestimonial";
+import Footer from "./Footer";
 
 function HomePage() {
   return (
@@ -41,6 +43,12 @@ function HomePage() {
 
       {/* Course catergory */}
       <CourseCategory/>
+
+      {/* ClientTestimonial */}
+      <ClientTestimonial/>
+
+      {/* Footer */}
+      <Footer/>
 
     </>
   );

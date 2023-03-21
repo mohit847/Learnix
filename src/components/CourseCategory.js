@@ -1,165 +1,208 @@
 import React, { useState } from "react";
-// import "./styles.css";
 
-const courses = [
+const tabs = [
   {
-    id: 1,
-    category: "design",
-    title: "Design Fundamentals",
-    description:
-      "Learn the basics of design theory and apply them to create beautiful designs.",
-    buttonText: "Enroll",
+    title: "Design",
+    subtitle:
+      "Build skills with courses, certificates, and degrees online from world-class.",
+    courses: [
+      {
+        title: "User Centered Design",
+        subtitle: "(Beginner friendly)",
+        icon1: "202 Lessons",
+        icon2: "6k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Graphic Design",
+        subtitle: "(Intermediate level)",
+        icon1: "150 Lessons",
+        icon2: "3k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Design Thinking",
+        subtitle: "(Advanced level)",
+        icon1: "100 Lessons",
+        icon2: "2k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "UI Design",
+        subtitle: "(Expert level)",
+        icon1: "75 Lessons",
+        icon2: "1k+ students",
+        button: "Enroll",
+      },
+    ],
   },
   {
-    id: 2,
-    category: "design",
-    title: "Typography for Designers",
-    description:
-      "Explore the principles of typography and how to apply them to your design work.",
-    buttonText: "Enroll",
+    title: "Development",
+    subtitle:
+      "Build skills with courses, certificates, and degrees online from world-class.",
+    courses: [
+      {
+        title: "Web Development",
+        subtitle: "(Beginner friendly)",
+        icon1: "150 Lessons",
+        icon2: "5k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Mobile App Development",
+        subtitle: "(Intermediate level)",
+        icon1: "120 Lessons",
+        icon2: "2k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Game Development",
+        subtitle: "(Advanced level)",
+        icon1: "90 Lessons",
+        icon2: "1k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Full Stack Development",
+        subtitle: "(Expert level)",
+        icon1: "200 Lessons",
+        icon2: "4k+ students",
+        button: "Enroll",
+      },
+    ],
   },
   {
-    id: 3,
-    category: "design",
-    title: "Web Design Basics",
-    description:
-      "Discover the fundamentals of web design and how to create responsive layouts.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 4,
-    category: "design",
-    title: "User Experience Design",
-    description:
-      "Learn how to create user-centered designs that meet the needs of your users.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 5,
-    category: "development",
-    title: "JavaScript Fundamentals",
-    description:
-      "Master the basics of JavaScript and start building dynamic web applications.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 6,
-    category: "development",
-    title: "React for Beginners",
-    description:
-      "Get started with React and learn how to build reusable UI components.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 7,
-    category: "development",
-    title: "Node.js Essentials",
-    description:
-      "Learn how to use Node.js to build scalable and efficient web applications.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 8,
-    category: "development",
-    title: "Full-Stack Web Development",
-    description:
-      "Master the full-stack development process and build web applications from scratch.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 9,
-    category: "marketing",
-    title: "Social Media Marketing",
-    description:
-      "Discover the latest social media marketing trends and tactics to grow your audience.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 10,
-    category: "marketing",
-    title: "Content Marketing Strategy",
-    description:
-      "Create a winning content marketing strategy and attract more leads and customers.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 11,
-    category: "marketing",
-    title: "Email Marketing Essentials",
-    description:
-      "Learn how to create effective email marketing campaigns that drive conversions.",
-    buttonText: "Enroll",
-  },
-  {
-    id: 12,
-    category: "marketing",
-    title: "Digital Advertising",
-    description:
-      "Master the art of digital advertising and drive more traffic to your website.",
-    buttonText: "Enroll",
+    title: "Marketing",
+    subtitle:
+      "Build skills with courses, certificates, and degrees online from world-class.",
+    courses: [
+      {
+        title: "Digital Marketing",
+        subtitle: "(Beginner friendly)",
+        icon1: "180 Lessons",
+        icon2: "4k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Social Media Marketing",
+        subtitle: "(Intermediate level)",
+        icon1: "100 Lessons",
+        icon2: "2k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Content Marketing",
+        subtitle: "(Advanced level)",
+        icon1: "75 Lessons",
+        icon2: "1k+ students",
+        button: "Enroll",
+      },
+      {
+        title: "Influencer Marketing",
+        subtitle: "(Expert level)",
+        icon1: "50 Lessons",
+        icon2: "500+ students",
+        button: "Enroll",
+      },
+    ],
   },
 ];
 
-const Tabs = ({ activeTab, onTabClick }) => {
+// const CourseTabs = () => {
+//   const [activeTab, setActiveTab] = useState(tabs[0]);
+
+//   return (
+//     <div className="flex flex-col items-center border-2 border-cyan-900">
+//       <div className="text-6xl">Browse Our Courses by Category</div>
+//       <div className="flex justify-center items-center self-center my-20 max-w-5xl mx-auto border-2 border-gray-800">
+//         <div className="flex flex-col w-auto p-4 border-2 border-gray-800">
+//           {tabs.map((tab) => (
+//             <div
+//               key={tab.title}
+//               className={`p-4 cursor-pointer ${
+//                 activeTab.title === tab.title ? "bg-gray-200" : ""
+//               }`}
+//               onClick={() => setActiveTab(tab)}
+//             >
+//               <h2 className="text-xl font-bold">{tab.title}</h2>
+//               <p className="text-sm">{tab.subtitle}</p>
+//             </div>
+//           ))}
+//         </div>
+//         <div className="grid grid-cols-2 gap-4 p-4 w-auto border-2 border-blue-800">
+//           {activeTab.courses.map((course) => (
+//             <div key={course.title} className="border w-60">
+//               <h2 className="text-lg font-bold p-2">{course.title}</h2>
+//               <p className="text-sm p-2">{course.subtitle}</p>
+//               <div className="flex justify-between items-center p-2">
+//                 <div>
+//                   <p>{course.icon1}</p>
+//                   <p>{course.icon2}</p>
+//                 </div>
+//                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+//                   {course.button}
+//                 </button>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+const CourseTabs = () => {
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+
   return (
-    <div className="tabs">
-      <div
-        className={`tab ${activeTab === "design" ? "active" : ""}`}
-        onClick={() => onTabClick("design")}
-      >
-        Design
-      </div>
-      <div
-        className={`tab ${activeTab === "development" ? "active" : ""}`}
-        onClick={() => onTabClick("development")}
-      >
-        Development
-      </div>
-      <div
-        className={`tab ${activeTab === "marketing" ? "active" : ""}`}
-        onClick={() => onTabClick("marketing")}
-      >
-        Marketing
+    <div className="flex flex-col items-center border-2 border-cyan-900">
+      <h2 className="text-4xl max-w-xs text-center my-8 break-words">
+        Browse Our Courses by Category
+      </h2>
+      <div className="flex justify-center items-center self-center my-14 max-w-6xl mx-auto border-2 border-red-700">
+        <div className="flex flex-col  border-2 border-orange-500">
+          {tabs.map((tab) => (
+            <div
+              key={tab.title}
+              className={`px-4 py-5 cursor-pointer ${
+                activeTab.title === tab.title ? "bg-gray-500 backdrop-blur-lg" : ""
+              }`}
+              onClick={() => setActiveTab(tab)}
+            >
+              <h2 className="text-xl font-bold break-words">{tab.title}</h2>
+              <p className="text-sm py-1 break-words w-72">{tab.subtitle}</p>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-4 p-4 w-auto border-2 border-zinc-700 ">
+          {activeTab.courses.map((course) => (
+            <div
+              key={course.title}
+              className="border w-72 rounded-lg shadow-md"
+            >
+              <h2 className="text-lg font-bold p-2">{course.title}</h2>
+              <p className="text-sm p-2">{course.subtitle}</p>
+              <div className="flex justify-between items-center p-2">
+                <div>
+                  <p>{course.icon1}</p>
+                  <p>{course.icon2}</p>
+                </div>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  {course.button}
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
-const CourseCard = ({ course }) => {
-  const [enrolled, setEnrolled] = useState(false);
 
-  const handleEnrollClick = () => {
-    setEnrolled(true);
-  };
 
-  return (
-    <div className="course-card">
-      <h2>{course.title}</h2>
-      <p>{course.description}</p>
-      <button onClick={handleEnrollClick} disabled={enrolled}>
-        {enrolled ? "Enrolled" : course.buttonText}
-      </button>
-    </div>
-  );
-};
 
-export default function CourseCategory() {
-  const [activeTab, setActiveTab] = useState("design");
+export default CourseTabs;
 
-  const filteredCourses = courses.filter(
-    (course) => course.category === activeTab
-  );
 
-  return (
-    <div className="App">
-      <h1>Online Courses</h1>
-      <Tabs activeTab={activeTab} onTabClick={setActiveTab} />
-      <div className="course-list">
-        {filteredCourses.map((course) => (
-          <CourseCard key={course.id} course={course} />
-        ))}
-      </div>
-    </div>
-  );
-}
 
-// export default CourseCategory;
+// ftGv@4778# 
