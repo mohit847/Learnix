@@ -2,11 +2,11 @@ import React from 'react';
 import app from "../assets/app.png";
 import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
-import { AiOutlineYoutube } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-cyan-800 text-white py-8">
+    <footer className="bg-cyan-800 text-white py-6">
       <div className="container mx-auto flex flex-wrap">
         <div className="w-full lg:w-1/4 px-4 mb-8">
           <h4 className="text-xl font-bold mb-4">Company</h4>
@@ -46,21 +46,21 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="my-8 border-gray-700" />
-      <div className="container mx-auto flex flex-wrap">
-        <div className="w-full lg:w-1/2 px-4">
-          <p className="text-sm text-slate-300 mb-2">@ 2020 Bravaa. All rights reserved.</p>
+      <hr className=" border-gray-700" />
+      <div className=" mx-auto flex flex-wrap items-center  ">
+        <div className="text-center w-full lg:w-1/2 px-4">
+          <p className="text-sm text-slate-300 ">@ 2020 Bravaa. All rights reserved.</p>
         </div>
-        <div className="w-full lg:w-1/2 px-4 lg:text-right text-center">
+        <div className=" flex gap-4  w-full lg:w-1/2 px-4 lg:text-right ">
         
           <a href="#">
-            <i className="fab fa-instagram text-2xl text-gray-600 mx-2"><FaInstagram/></i>
+            <i className="fab fa-instagram text-2xl text-white-600 mx-2"><FaInstagram/></i>
           </a>
           <a href="#">
-            <i className="fab fa-twitter text-2xl text-gray-600 mx-2"><FaTwitter/></i>
+            <i className="fab fa-twitter text-2xl text-white-600 mx-2"><FaTwitter/></i>
           </a>
           <a href="#">
-            <i className="fab fa-youtube text-2xl text-gray-600 mx-2"><AiOutlineYoutube/></i>
+            <i className="fab fa-youtube text-2xl text-white-600 mx-2"><FaYoutube/></i>
           </a>
         </div>
       </div>

@@ -4,7 +4,7 @@ import girl from "../assets/girl.png";
 function ExploreTeachers() {
   return (
     <div className="flex items-center h-[680px] -mt-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row md:flex-row md:justify-between gap-48 items-center h-full border-2 border-gray-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row md:flex-row md:justify-between gap-48 items-center h-full ">
         <div className=" text-center md:text-left">
           <h1 className="text-4xl text-blue-900 font-bold mb-4">
             Courses taught by <br />

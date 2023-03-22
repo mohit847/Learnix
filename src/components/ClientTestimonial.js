@@ -20,7 +20,7 @@ const ClientTestimonial = () => {
             <img className="rounded-lg" src={man} alt="Client testimonial" />
           </div>
 
-          <div className="text-2xl font-medium flex-wrap  max-w-sm border-2 border-zinc-700 ">
+          <div className="text-2xl font-medium flex-wrap  max-w-sm ">
             "I started with their free courses but quickly became a customer
             once I saw how useful the lessons were."
             <h4 className="text-base font-bold mt-20">

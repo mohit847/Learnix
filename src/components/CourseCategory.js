@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import penta from "../assets/penta.png";
+import square from "../assets/square.png";
+import triangle from "../assets/triangle.png";
+import circle from "../assets/circle.png";
 
 const tabs = [
   {
@@ -9,6 +13,7 @@ const tabs = [
       {
         title: "User Centered Design",
         subtitle: "(Beginner friendly)",
+        icon: penta,
         icon1: "202 Lessons",
         icon2: "6k+ students",
         button: "Enroll",
@@ -16,6 +21,7 @@ const tabs = [
       {
         title: "Graphic Design",
         subtitle: "(Intermediate level)",
+        icon: square,
         icon1: "150 Lessons",
         icon2: "3k+ students",
         button: "Enroll",
@@ -23,6 +29,7 @@ const tabs = [
       {
         title: "Design Thinking",
         subtitle: "(Advanced level)",
+        icon: triangle,
         icon1: "100 Lessons",
         icon2: "2k+ students",
         button: "Enroll",
@@ -30,6 +37,7 @@ const tabs = [
       {
         title: "UI Design",
         subtitle: "(Expert level)",
+        icon: circle,
         icon1: "75 Lessons",
         icon2: "1k+ students",
         button: "Enroll",
@@ -44,6 +52,7 @@ const tabs = [
       {
         title: "Web Development",
         subtitle: "(Beginner friendly)",
+        icon: penta,
         icon1: "150 Lessons",
         icon2: "5k+ students",
         button: "Enroll",
@@ -51,6 +60,7 @@ const tabs = [
       {
         title: "Mobile App Development",
         subtitle: "(Intermediate level)",
+        icon: square,
         icon1: "120 Lessons",
         icon2: "2k+ students",
         button: "Enroll",
@@ -58,6 +68,7 @@ const tabs = [
       {
         title: "Game Development",
         subtitle: "(Advanced level)",
+        icon: triangle,
         icon1: "90 Lessons",
         icon2: "1k+ students",
         button: "Enroll",
@@ -65,6 +76,7 @@ const tabs = [
       {
         title: "Full Stack Development",
         subtitle: "(Expert level)",
+        icon: circle,
         icon1: "200 Lessons",
         icon2: "4k+ students",
         button: "Enroll",
@@ -79,6 +91,7 @@ const tabs = [
       {
         title: "Digital Marketing",
         subtitle: "(Beginner friendly)",
+        icon: penta,
         icon1: "180 Lessons",
         icon2: "4k+ students",
         button: "Enroll",
@@ -86,6 +99,7 @@ const tabs = [
       {
         title: "Social Media Marketing",
         subtitle: "(Intermediate level)",
+        icon: square,
         icon1: "100 Lessons",
         icon2: "2k+ students",
         button: "Enroll",
@@ -93,6 +107,7 @@ const tabs = [
       {
         title: "Content Marketing",
         subtitle: "(Advanced level)",
+        icon: triangle,
         icon1: "75 Lessons",
         icon2: "1k+ students",
         button: "Enroll",
@@ -100,6 +115,7 @@ const tabs = [
       {
         title: "Influencer Marketing",
         subtitle: "(Expert level)",
+        icon: circle,
         icon1: "50 Lessons",
         icon2: "500+ students",
         button: "Enroll",
@@ -108,88 +124,52 @@ const tabs = [
   },
 ];
 
-// const CourseTabs = () => {
-//   const [activeTab, setActiveTab] = useState(tabs[0]);
-
-//   return (
-//     <div className="flex flex-col items-center border-2 border-cyan-900">
-//       <div className="text-6xl">Browse Our Courses by Category</div>
-//       <div className="flex justify-center items-center self-center my-20 max-w-5xl mx-auto border-2 border-gray-800">
-//         <div className="flex flex-col w-auto p-4 border-2 border-gray-800">
-//           {tabs.map((tab) => (
-//             <div
-//               key={tab.title}
-//               className={`p-4 cursor-pointer ${
-//                 activeTab.title === tab.title ? "bg-gray-200" : ""
-//               }`}
-//               onClick={() => setActiveTab(tab)}
-//             >
-//               <h2 className="text-xl font-bold">{tab.title}</h2>
-//               <p className="text-sm">{tab.subtitle}</p>
-//             </div>
-//           ))}
-//         </div>
-//         <div className="grid grid-cols-2 gap-4 p-4 w-auto border-2 border-blue-800">
-//           {activeTab.courses.map((course) => (
-//             <div key={course.title} className="border w-60">
-//               <h2 className="text-lg font-bold p-2">{course.title}</h2>
-//               <p className="text-sm p-2">{course.subtitle}</p>
-//               <div className="flex justify-between items-center p-2">
-//                 <div>
-//                   <p>{course.icon1}</p>
-//                   <p>{course.icon2}</p>
-//                 </div>
-//                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-//                   {course.button}
-//                 </button>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 const CourseTabs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className="flex flex-col items-center border-2 border-cyan-900">
-      <h2 className="text-4xl max-w-xs text-center my-8 break-words">
+    <div className="flex flex-col items-center ">
+      <h2 className="text-4xl font-bold text-center my-8 break-words">
         Browse Our Courses by Category
       </h2>
-      <div className="flex justify-center items-center self-center my-14 max-w-6xl mx-auto border-2 border-red-700">
-        <div className="flex flex-col  border-2 border-orange-500">
+      <div className="flex flex-col md:flex-row justify-center items-center self-center my-14 max-w-7xl mx-auto ">
+        <div className="flex flex-col ">
           {tabs.map((tab) => (
             <div
               key={tab.title}
-              className={`px-4 py-5 cursor-pointer ${
-                activeTab.title === tab.title ? "bg-gray-500 backdrop-blur-lg" : ""
+              className={`px-4 py-12 cursor-pointer ${
+                activeTab.title === tab.title
+                  ? "bg-gray-500 backdrop-blur-lg"
+                  : ""
               }`}
               onClick={() => setActiveTab(tab)}
             >
-              <h2 className="text-xl font-bold break-words">{tab.title}</h2>
-              <p className="text-sm py-1 break-words w-72">{tab.subtitle}</p>
+              <h2 className="text-3xl font-bold break-words">{tab.title}</h2>
+              <p className="text-md py-1 max-w-sm break-words w-72 md:w-auto">
+                {tab.subtitle}
+              </p>
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4 p-4 w-auto border-2 border-zinc-700 ">
+        <div className="grid grid-cols-2 gap-8 p-4 border border-orange-800 ">
           {activeTab.courses.map((course) => (
             <div
               key={course.title}
-              className="border w-72 rounded-lg shadow-md"
+              className="border rounded-lg shadow-md"
             >
-              <h2 className="text-lg font-bold p-2">{course.title}</h2>
-              <p className="text-sm p-2">{course.subtitle}</p>
-              <div className="flex justify-between items-center p-2">
-                <div>
+              <img src={course.icon} className="w-10 m-8" alt="images" />
+              <h2 className="text-lg font-bold p-4 ">{course.title}</h2>
+              <div className="flex flex-col justify-between items-center p-2">
+                <div className="flex gap-24 items-center mb-2">
+                  <p className="text-sm">{course.subtitle}</p>
                   <p>{course.icon1}</p>
-                  <p>{course.icon2}</p>
                 </div>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <div className="flex gap-24 items-center">
+                <p>{course.icon2}</p>
+                <button className="bg-white-500 hover:bg-blue-700 hover:border-0 hover:text-white text-black border-[1px] border-gray-800 font-bold py-1 px-4 rounded">
                   {course.button}
                 </button>
+                </div>
               </div>
             </div>
           ))}
@@ -199,10 +179,6 @@ const CourseTabs = () => {
   );
 };
 
-
-
 export default CourseTabs;
 
-
-
-// ftGv@4778# 
+// ftGv@4778#
